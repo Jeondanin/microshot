@@ -38,4 +38,3 @@
     <img src="https://user-images.githubusercontent.com/39483767/84375089-fe5eb180-ac19-11ea-821d-b21f2bd5a758.png"> </img>
   </p>
 
-<p id="edge_detection"> hello</p>
