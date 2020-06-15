@@ -9,17 +9,26 @@
 * [edge Analysis](#edge_analysis)
 
 ## edge_detection
-### 顕微鏡の原本写真からエッジを探知する
-<br/>
-  <p>Bi-Directional Cascade Networkを用いる</p>
-  以下のグラフや写真は次の論文から抜粋した写真です <br>
-  [論文] (https://arxiv.org/pdf/1902.10903.pdf)
+### 顕微鏡の原本写真からエッジを探知する 
+Bi-Directional Cascade Networkを活用する
+### BDCNとは
+論文によりますと、写真のエッジを探知するために大事である多数のscale representaionを双方向カスケードネットワーク構造から求められるといいます。
+
+[Bi-Directional Cascade Network for Perceptual Edge Detection](https://arxiv.org/pdf/1902.10903.pdf)
  
   <p>
-  <img width=400 src="https://user-images.githubusercontent.com/39483767/84657416-32561180-af4f-11ea-855f-b6e82fda9b27.png"> </img>
+  <img width=400 src="https://user-images.githubusercontent.com/39483767/84659195-fec8b680-af51-11ea-95f9-81a0dc5d33d3.png"> </img>
+   
+   上記のテーブルを見ると評価メトリック（evaluation Metric）である　Average Precision (AP), Optimal Dataset Scale (ODS), Optimal Image Scale (OIS)が相当優れていることがわかる。
+   
+  <img width=400 src="https://user-images.githubusercontent.com/39483767/84659206-04260100-af52-11ea-8b94-2fd6029b07a8.png"> </img>
   <img width=400 src="https://user-images.githubusercontent.com/39483767/84657140-ca9fc680-af4e-11ea-83e5-ef79c02a56a7.png"> </img>
+  <br>
+  データセットから得られた写真結果。
   </p>
+  　
   
+### 顕微鏡の写真への導入
   <p align="center">
     <img src="https://user-images.githubusercontent.com/39483767/78030503-2a99be80-739d-11ea-8cae-d0fa1dd2f98a.jpg"> </img>
     <img src="https://user-images.githubusercontent.com/39483767/84375038-ea1ab480-ac19-11ea-9473-e3417e88dcd3.jpg"> </img>
