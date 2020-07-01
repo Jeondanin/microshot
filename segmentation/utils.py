@@ -174,7 +174,7 @@ class SegModel:
         2. original deeplab v3+ and subpixel upsampling layer
         '''
         
-        model = Deeplabv3(weights=None, input_tensor=None, infer=False,
+        model = Deeplabv3(weights=None, input_tensor=None,
                           input_shape=self.sz + (3,), classes=21,
                           backbone=backbone, OS=16, alpha=1)
         

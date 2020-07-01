@@ -1,14 +1,19 @@
 from __future__ import division
 
-from keras import backend as K
-from keras.layers import Conv2D
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.backend import eval
 import numpy as np
 import tensorflow as tf
 
 
 def icnr_weights(init = tf.keras.initializers.GlorotNormal(seed=None), scale=2, shape=[3,3,32,4], dtype = tf.float32):
-    sess = tf.Session()
-    return sess.run(ICNR(init, scale=scale)(shape=shape, dtype=dtype))
+    hello = ICNR(init, scale=scale)(shape=shape, dtype=dtype)
+    def wrapper(x, c):
+      return c
+    f = tf.function(wrapper)
+    print(hello)
+    return eval(f([],hello))
 
 class ICNR:
     """ICNR initializer for checkerboard artifact free sub pixel convolution
@@ -31,9 +36,11 @@ class ICNR:
 
         new_shape = shape[:3] + [shape[3] // (self.scale ** 2)]
         x = self.initializer(new_shape, dtype, partition_info)
+        #x = self.initializer(new_shape, dtype)
         x = tf.transpose(x, perm=[2, 0, 1, 3])
-        x = tf.image.resize_nearest_neighbor(x, size=(shape[0] * self.scale, shape[1] * self.scale))
-        x = tf.space_to_depth(x, block_size=self.scale)
+        x = tf.image.resize(x, size=(shape[0] * self.scale, shape[1] * self.scale), method='nearest')
+        # x = tf.image.resize_nearest_neighbor(x, size=(shape[0] * self.scale, shape[1] * self.scale))
+        x = tf.nn.space_to_depth(x, block_size=self.scale)
         x = tf.transpose(x, perm=[1, 2, 0, 3])
 
         return x
