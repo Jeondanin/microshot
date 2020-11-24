@@ -5,6 +5,7 @@
 ## Index
 * [edge_Detection](#edge_detection)
 * [skeletonization](#skeletonization)
+* [segmentation](#segmentation)(developing)
 * [node Detection](#node_detection)
 * [edge Analysis](#edge_analysis)
 
@@ -30,9 +31,17 @@ Bi-Directional Cascade Networkの活用
   
 ### 顕微鏡の写真への導入
   <p align="center">
-    <img src="https://user-images.githubusercontent.com/39483767/78030503-2a99be80-739d-11ea-8cae-d0fa1dd2f98a.jpg"> </img>
-    <img src="https://user-images.githubusercontent.com/39483767/84375038-ea1ab480-ac19-11ea-9473-e3417e88dcd3.jpg"> </img>
+    <img width="800px" src="https://user-images.githubusercontent.com/39483767/78030503-2a99be80-739d-11ea-8cae-d0fa1dd2f98a.jpg"> </img>
+    <img width="800px" src="https://user-images.githubusercontent.com/39483767/84375038-ea1ab480-ac19-11ea-9473-e3417e88dcd3.jpg"> </img>
   </p>
+
+## segmentation(developing)
+### 血管構造をsegmetationする
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/39483767/100164465-42f5b500-2efb-11eb-85ae-114af764414b.jpg"> </img>
+    <img src="https://user-images.githubusercontent.com/39483767/100164443-35402f80-2efb-11eb-8d0f-787123e4c64b.png"> </img>
+  </p>
+
 
 ## skeletonization
 ### 血管構造をskeletonizeする
