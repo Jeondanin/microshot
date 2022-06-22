@@ -20,7 +20,7 @@ Markdown==3.1.1
 matplotlib==3.1.1
 mrcfile==1.1.2
 neuralgym==0.0.1
-numpy==1.17.1
+numpy==1.22.0
 opencv-python==4.2.0.32
 packaging==20.3
 pandas==1.0.4
